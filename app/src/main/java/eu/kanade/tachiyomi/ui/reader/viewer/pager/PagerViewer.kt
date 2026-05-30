@@ -122,7 +122,13 @@ abstract class PagerViewer(val activity: ReaderActivity) : Viewer {
             if (activity.viewModel.state.value.menuVisible || config.longTapEnabled) {
                 val item = adapter.items.getOrNull(pager.currentItem)
                 if (item is ReaderPage) {
-                    activity.onPageLongTap(item)
+                    val holder = getPageHolder(item)
+                    val isZoomedIn = holder?.isZoomedIn() ?: false
+                    if (isZoomedIn) {
+                        activity.onPageLongTapZoomed(item)
+                    } else {
+                        activity.onPageLongTap(item)
+                    }
                     return@f true
                 }
             }

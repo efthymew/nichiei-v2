@@ -231,6 +231,14 @@ open class ReaderPageImageView @JvmOverloads constructor(
         }
     }
 
+    fun isZoomedIn(): Boolean {
+        return when (val view = pageView) {
+            is SubsamplingScaleImageView -> view.scale > view.minScale + 0.01f
+            is PhotoView -> view.scale > 1f + 0.01f
+            else -> false
+        }
+    }
+
     private fun prepareNonAnimatedImageView() {
         if (pageView is SubsamplingScaleImageView) return
         removeView(pageView)

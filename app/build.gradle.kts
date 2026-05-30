@@ -180,6 +180,10 @@ dependencies {
     implementation(projects.presentationWidget)
     implementation(projects.telemetry)
 
+    //translation
+    implementation(libs.text.recognition.japanese)
+    implementation(libs.onnxruntime.android)
+
     // Compose
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.foundation)

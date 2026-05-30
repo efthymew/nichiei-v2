@@ -681,6 +681,10 @@ class ReaderActivity : BaseActivity() {
         viewModel.openPageDialog(page)
     }
 
+    fun onPageLongTapZoomed(page: ReaderPage) {
+        viewModel.openDictionaryDialog(page)
+    }
+
     /**
      * Called from the viewer when the given [chapter] should be preloaded. It should be called when
      * the viewer is reaching the beginning or end of a chapter or the transition page is active.

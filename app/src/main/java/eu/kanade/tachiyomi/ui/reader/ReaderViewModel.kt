@@ -779,6 +779,10 @@ class ReaderViewModel @JvmOverloads constructor(
         mutableState.update { it.copy(dialog = Dialog.PageActions(page)) }
     }
 
+    fun openDictionaryDialog(page: ReaderPage) {
+        // skip for now
+    }
+
     fun openSettingsDialog() {
         mutableState.update { it.copy(dialog = Dialog.Settings) }
     }
