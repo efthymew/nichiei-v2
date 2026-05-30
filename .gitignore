@@ -9,6 +9,9 @@ build
 !.idea/icon.svg
 /captures
 
+# onnx models
+app/src/main/assets/*.onnx
+
 # Configuration files
 local.properties
 
